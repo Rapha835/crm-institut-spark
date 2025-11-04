@@ -4,17 +4,16 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
-    nom: "",
-    entreprise: "",
+    name: "",
+    company: "",
     email: "",
-    telephone: "",
     message: "",
   });
 
@@ -31,20 +30,17 @@ const Contact = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Replace with your N8N webhook URL
-    const webhookUrl = "YOUR_N8N_WEBHOOK_URL_HERE";
+    const webhookUrl = "https://n8n.rbreme.com/webhook/ee7a5345-bde1-4e75-8eb2-92253a9826c4";
+    const bearerToken = "Bearer pewvym-xesvoQ-rarbo0";
 
     try {
       const response = await fetch(webhookUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Authorization": bearerToken,
         },
-        body: JSON.stringify({
-          ...formData,
-          timestamp: new Date().toISOString(),
-          source: "CRM Institut Website",
-        }),
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
@@ -54,10 +50,9 @@ const Contact = () => {
             "Nous vous répondrons dans les plus brefs délais. Merci de votre intérêt.",
         });
         setFormData({
-          nom: "",
-          entreprise: "",
+          name: "",
+          company: "",
           email: "",
-          telephone: "",
           message: "",
         });
       } else {
@@ -96,7 +91,7 @@ const Contact = () => {
           <div className="space-y-6">
             <Card className="border-border">
               <CardHeader>
-                <CardTitle className="text-xl">Nos Coordonnées</CardTitle>
+                <CardTitle className="text-xl">Contactez-nous</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -108,44 +103,11 @@ const Contact = () => {
                       Email
                     </div>
                     <a
-                      href="mailto:contact@crm-institut.fr"
+                      href="mailto:crminstitut@gmail.com"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      contact@crm-institut.fr
+                      crminstitut@gmail.com
                     </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-foreground mb-1">
-                      Téléphone
-                    </div>
-                    <a
-                      href="tel:+33123456789"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      +33 1 23 45 67 89
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-foreground mb-1">
-                      Adresse
-                    </div>
-                    <p className="text-muted-foreground">
-                      Paris, France
-                      <br />
-                      Formations disponibles en présentiel et distanciel
-                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -154,11 +116,8 @@ const Contact = () => {
             <Card className="border-border bg-gradient-subtle">
               <CardContent className="p-6">
                 <h3 className="font-semibold text-foreground mb-2">
-                  Horaires d'ouverture
+                  Réponse rapide
                 </h3>
-                <p className="text-sm text-muted-foreground mb-2">
-                  Lundi - Vendredi : 9h00 - 18h00
-                </p>
                 <p className="text-sm text-muted-foreground">
                   Nous répondons à vos demandes sous 24h ouvrées
                 </p>
@@ -178,67 +137,50 @@ const Contact = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="nom">
+                      <Label htmlFor="name">
                         Nom complet <span className="text-destructive">*</span>
                       </Label>
                       <Input
-                        id="nom"
-                        name="nom"
+                        id="name"
+                        name="name"
                         type="text"
                         placeholder="Jean Dupont"
-                        value={formData.nom}
+                        value={formData.name}
                         onChange={handleChange}
                         required
                       />
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="entreprise">
+                      <Label htmlFor="company">
                         Entreprise <span className="text-destructive">*</span>
                       </Label>
                       <Input
-                        id="entreprise"
-                        name="entreprise"
+                        id="company"
+                        name="company"
                         type="text"
                         placeholder="Nom de votre entreprise"
-                        value={formData.entreprise}
+                        value={formData.company}
                         onChange={handleChange}
                         required
                       />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="email">
-                        Email professionnel{" "}
-                        <span className="text-destructive">*</span>
-                      </Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="j.dupont@entreprise.fr"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="telephone">
-                        Téléphone <span className="text-destructive">*</span>
-                      </Label>
-                      <Input
-                        id="telephone"
-                        name="telephone"
-                        type="tel"
-                        placeholder="+33 6 12 34 56 78"
-                        value={formData.telephone}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email">
+                      Email professionnel{" "}
+                      <span className="text-destructive">*</span>
+                    </Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      placeholder="j.dupont@entreprise.fr"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                    />
                   </div>
 
                   <div className="space-y-2">

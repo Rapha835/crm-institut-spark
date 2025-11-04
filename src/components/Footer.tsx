@@ -1,4 +1,4 @@
-import { Linkedin, Mail, Phone } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
   const scrollToSection = (id: string) => {
@@ -32,16 +32,10 @@ const Footer = () => {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="mailto:contact@crm-institut.fr"
+                href="mailto:crminstitut@gmail.com"
                 className="w-10 h-10 bg-background/10 hover:bg-background/20 rounded-lg flex items-center justify-center transition-colors"
               >
                 <Mail className="w-5 h-5" />
-              </a>
-              <a
-                href="tel:+33123456789"
-                className="w-10 h-10 bg-background/10 hover:bg-background/20 rounded-lg flex items-center justify-center transition-colors"
-              >
-                <Phone className="w-5 h-5" />
               </a>
             </div>
           </div>

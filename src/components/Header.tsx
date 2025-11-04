@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import crmLogo from "@/assets/crm-institut-logo.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,9 +45,9 @@ const Header = () => {
           <div className="flex-shrink-0">
             <button
               onClick={() => scrollToSection("hero")}
-              className="text-2xl font-bold text-primary hover:text-primary-dark transition-colors"
+              className="hover:opacity-80 transition-opacity"
             >
-              CRM Institut
+              <img src={crmLogo} alt="CRM Institut" className="h-12 w-auto" />
             </button>
           </div>
 

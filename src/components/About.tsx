@@ -1,5 +1,6 @@
 import { Award, Users, Target, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import qualiopiLogo from "@/assets/qualiopi-logo.png";
 
 const About = () => {
   const values = [
@@ -46,32 +47,14 @@ const About = () => {
           </p>
         </div>
 
-        {/* Certifications */}
-        <div className="flex flex-wrap justify-center gap-6 mb-16">
-          <div className="bg-card rounded-xl shadow-card p-6 text-center">
-            <div className="text-4xl mb-2">🎓</div>
-            <div className="font-semibold text-foreground">
-              Certification Qualiopi
-            </div>
-            <div className="text-sm text-muted-foreground">
-              Gage de qualité reconnu
-            </div>
-          </div>
-          <div className="bg-card rounded-xl shadow-card p-6 text-center">
-            <div className="text-4xl mb-2">💼</div>
-            <div className="font-semibold text-foreground">
-              Financement CPF
-            </div>
-            <div className="text-sm text-muted-foreground">
-              Formations éligibles
-            </div>
-          </div>
-          <div className="bg-card rounded-xl shadow-card p-6 text-center">
-            <div className="text-4xl mb-2">🏢</div>
-            <div className="font-semibold text-foreground">OPCO Agréé</div>
-            <div className="text-sm text-muted-foreground">
-              Prise en charge facilitée
-            </div>
+        {/* Certification Badge */}
+        <div className="flex justify-center mb-16">
+          <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
+            <img 
+              src={qualiopiLogo} 
+              alt="Certification Qualiopi - CRM Institut certifié pour les actions de formation" 
+              className="h-32 w-auto"
+            />
           </div>
         </div>
 

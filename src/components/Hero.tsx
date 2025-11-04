@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { BookOpen, Phone } from "lucide-react";
+import { BookOpen, Mail } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 
 const Hero = () => {
@@ -67,7 +67,7 @@ const Hero = () => {
               onClick={() => scrollToSection("contact")}
               className="w-full sm:w-auto text-lg px-8 py-6"
             >
-              <Phone className="mr-2" size={20} />
+              <Mail className="mr-2" size={20} />
               Prendre contact
             </Button>
           </div>
@@ -80,21 +80,15 @@ const Hero = () => {
             <div className="flex flex-wrap justify-center gap-8 text-primary-foreground/60">
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary-foreground">
-                  500+
+                  +20
                 </div>
-                <div className="text-sm">Professionnels formés</div>
+                <div className="text-sm">Années d'expertise</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary-foreground">
                   98%
                 </div>
                 <div className="text-sm">Taux de satisfaction</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary-foreground">
-                  15+
-                </div>
-                <div className="text-sm">Années d'expertise</div>
               </div>
             </div>
           </div>

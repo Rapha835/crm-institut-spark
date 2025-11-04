@@ -114,7 +114,7 @@ const Formations = () => {
             onClick={() => window.open("#digiforma", "_blank")}
             className="text-lg px-8"
           >
-            Voir le programme complet sur Digiforma
+            Voir notre catalogue complet
             <ExternalLink className="ml-2" size={18} />
           </Button>
         </div>
