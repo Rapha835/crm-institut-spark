@@ -41,7 +41,7 @@ const Hero = () => {
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight animate-fade-in">
             Formations Professionnelles en{" "}
-            <span className="text-primary-light">IA, CRM, ERP et Data</span>
+            <span className="text-white">IA, CRM, ERP et Data</span>
           </h1>
 
           {/* Subheadline */}

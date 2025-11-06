@@ -6,7 +6,7 @@ const Testimonials = () => {
     {
       quote:
         "Formation de qualité exceptionnelle, parfaitement adaptée à nos besoins. Les formateurs sont des vrais experts qui connaissent le terrain.",
-      author: "Sophie Martin",
+      author: "Sophie M.",
       role: "Responsable Formation",
       company: "PME Industrielle (120 collaborateurs)",
       rating: 5,
@@ -14,7 +14,7 @@ const Testimonials = () => {
     {
       quote:
         "Grâce à CRM Institut, nos équipes ont pu monter en compétences rapidement sur Power BI. Le ROI a été immédiat avec de meilleurs tableaux de bord.",
-      author: "Thomas Dubois",
+      author: "Thomas D.",
       role: "Directeur des Systèmes d'Information",
       company: "Entreprise de services (250 collaborateurs)",
       rating: 5,
@@ -22,7 +22,7 @@ const Testimonials = () => {
     {
       quote:
         "L'accompagnement personnalisé fait toute la différence. Le formateur a su adapter le programme à notre contexte métier spécifique.",
-      author: "Marie Lefèvre",
+      author: "Marie L.",
       role: "Directrice Commerciale",
       company: "ETI Distribution (180 collaborateurs)",
       rating: 5,
