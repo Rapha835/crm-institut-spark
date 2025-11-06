@@ -111,7 +111,7 @@ const Formations = () => {
           </p>
           <Button
             size="lg"
-            onClick={() => window.open("#digiforma", "_blank")}
+            onClick={() => window.open("https://crminstitut.catalogueformpro.com", "_blank")}
             className="text-lg px-8"
           >
             Voir notre catalogue complet
