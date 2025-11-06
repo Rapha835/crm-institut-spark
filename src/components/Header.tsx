@@ -47,7 +47,7 @@ const Header = () => {
               onClick={() => scrollToSection("hero")}
               className="hover:opacity-80 transition-opacity"
             >
-              <img src={crmLogo} alt="CRM Institut" className="h-10 w-auto" />
+              <img src={crmLogo} alt="CRM Institut" className="h-16 w-auto" />
             </button>
           </div>
 
@@ -57,7 +57,9 @@ const Header = () => {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="text-foreground hover:text-primary font-medium transition-colors relative group"
+                className={`font-medium transition-colors relative group ${
+                  isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
+                }`}
               >
                 {link.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
