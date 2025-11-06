@@ -47,7 +47,7 @@ const Header = () => {
               onClick={() => scrollToSection("hero")}
               className="hover:opacity-80 transition-opacity"
             >
-              <img src={crmLogo} alt="CRM Institut" className="h-16 w-auto" />
+              <img src={crmLogo} alt="CRM Institut" className="h-17 w-auto" />
             </button>
           </div>
 
