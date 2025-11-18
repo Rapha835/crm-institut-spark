@@ -55,7 +55,7 @@ const Hero = () => {
             <Button
               variant="hero"
               size="lg"
-              onClick={() => window.open("#digiforma", "_blank")}
+              onClick={() => window.open("https://crminstitut.catalogueformpro.com", "_blank")}
               className="w-full sm:w-auto text-lg px-8 py-6"
             >
               <BookOpen className="mr-2" size={20} />
