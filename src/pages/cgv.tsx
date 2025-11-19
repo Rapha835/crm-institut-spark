@@ -29,23 +29,12 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ title, number, children, 
 };
 
 export default function CGVShort() {
-  const handleDownload = async () => {
-    try {
-      const fileData = await window.fs.readFile('Cgv Crm Institut â Version Longue (modifiÃ©e).pdf');
-      const blob = new Blob([fileData], { type: 'application/pdf' });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'CGV_CRM_Institut_Version_Longue.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error('Erreur lors du téléchargement:', error);
-      alert('Erreur lors du téléchargement du document');
-    }
-  };
+  const handleDownload = () => {
+  const link = document.createElement('a');
+  link.href = '/CGV_CRM_INSTITUT.pdf';
+  link.download = 'CGV_CRM_INSTITUT.pdf';
+  link.click();
+};
 
   return (
     <section className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
