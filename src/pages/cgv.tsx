@@ -39,6 +39,7 @@ export default function CGVShort() {
 };
 
   return (
+     <Header />
     <section className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Header */}
       <div className="bg-white border-b border-gray-200 py-8 px-4">
@@ -308,5 +309,6 @@ export default function CGVShort() {
         </div>
       </div>
     </section>
+  <Footer />
   );
 }
