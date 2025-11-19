@@ -73,7 +73,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#digiforma"
+                  href="https://crminstitut.catalogueformpro.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-background/80 hover:text-background transition-colors"
@@ -83,7 +83,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#edof"
+                  href="https://www.moncompteformation.gouv.fr/espace-prive/html/#/formation/recherche/resultats?q=%7B%22ou%22:%7B%22modality%22:%22A_DISTANCE%22,%22type%22:%22CP%22%7D,%22debutPagination%22:1,%22nombreOccurences%22:10,%22contexteFormation%22:%22ACTIVITE_PROFESSIONNELLE%22,%22quoi%22:%22création%22,%22certifications%22:null,%22niveauSortie%22:null,%22minPrix%22:null,%22maxPrix%22:null,%22onlyWithAbondementsEligibles%22:null,%22startDate%22:null,%22endDate%22:null,%22durationHours%22:null,%22nomOrganisme%22:%22CRM%20INSTITUT%20SAS%22,%22evaluation%22:null,%22quoiReferentiel%22:null,%22rythme%22:null%7D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-background/80 hover:text-background transition-colors"
