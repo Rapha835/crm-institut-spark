@@ -88,7 +88,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-background/80 hover:text-background transition-colors"
                 >
-                  Espace EDOF
+                  Mon Compte Formation
                 </a>
               </li>
               <li>
