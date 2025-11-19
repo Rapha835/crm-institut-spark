@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Download } from 'lucide-react';
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 interface AccordionItemProps {
   title: string;
@@ -33,22 +31,10 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ title, number, children, 
 
 export default function CGVShort() {
   const handleDownload = () => {
-    try {
-      const link = document.createElement('a');
-      link.href = '/CGV_CRM_INSTITUT.pdf';
-      link.download = 'CGV_CRM_INSTITUT.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } catch (error) {
-      console.error('Erreur lors du téléchargement:', error);
-      alert('Impossible de télécharger le fichier. Veuillez réessayer.');
-    }
-  };
+   window.open('/CGV_CRM_INSTITUT.pdf', '_blank');
+};
 
   return (
-    <>
-      <Header />
       
       <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Header */}
@@ -324,8 +310,6 @@ export default function CGVShort() {
         </div>
       </footer>
     </div>
-    
-    <Footer />
-    </>
+  
   );
 }
