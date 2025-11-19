@@ -101,7 +101,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#cgv"
+                  href="/cgv"
                   className="text-background/80 hover:text-background transition-colors"
                 >
                   CGV
