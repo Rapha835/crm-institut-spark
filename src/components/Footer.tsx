@@ -93,7 +93,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#mentions-legales"
+                  href="/mentionslegales"
                   className="text-background/80 hover:text-background transition-colors"
                 >
                   Mentions légales
