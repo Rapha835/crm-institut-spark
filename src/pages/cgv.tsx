@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Download } from 'lucide-react';
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 interface AccordionItemProps {
   title: string;
