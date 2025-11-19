@@ -18,6 +18,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ title, number, children, 
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors text-left"
+        aria-expanded={isOpen}
       >
         <div className="flex items-center gap-3">
           <span className="text-sm font-semibold text-blue-600">{number}</span>
@@ -32,26 +33,36 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ title, number, children, 
 
 export default function CGVShort() {
   const handleDownload = () => {
-  const link = document.createElement('a');
-  link.href = '/CGV_CRM_INSTITUT.pdf';
-  link.download = 'CGV_CRM_INSTITUT.pdf';
-  link.click();
-};
+    try {
+      const link = document.createElement('a');
+      link.href = '/CGV_CRM_INSTITUT.pdf';
+      link.download = 'CGV_CRM_INSTITUT.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error('Erreur lors du téléchargement:', error);
+      alert('Impossible de télécharger le fichier. Veuillez réessayer.');
+    }
+  };
 
   return (
-     <Header />
-    <section className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <>
+      <Header />
+      
+      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200 py-8 px-4">
+      <header className="bg-white border-b border-gray-200 py-8 px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="flex justify-between items-start mb-4">
+          <div className="flex flex-col md:flex-row justify-between items-start gap-4 mb-4">
             <div>
-              <h1 className="text-4xl font-bold text-gray-900 mb-2">Conditions Générales de Vente</h1>
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Conditions Générales de Vente</h1>
               <p className="text-gray-600 text-sm">CRM Institut | Version en vigueur au 19/11/2025</p>
             </div>
             <button
               onClick={handleDownload}
-              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors font-medium text-sm"
+              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors font-medium text-sm whitespace-nowrap"
+              aria-label="Télécharger les CGV complètes en PDF"
             >
               <Download size={18} />
               Télécharger CGV complètes
@@ -72,10 +83,10 @@ export default function CGVShort() {
             </div>
           </div>
         </div>
-      </div>
+      </header>
 
       {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-4 py-8">
+      <main className="max-w-4xl mx-auto px-4 py-8">
         {/* Préambule */}
         <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded mb-8">
           <p className="text-gray-800 leading-relaxed">
@@ -164,8 +175,12 @@ export default function CGVShort() {
             <div className="space-y-3 text-sm">
               <p>La politique CPF de CRM Institut est basée sur les CGU officielles de <strong>Mon Compte Formation</strong>, 
               accessibles ici :</p>
-              <a href="https://www.moncompteformation.gouv.fr/espace-public/conditions-generales-dutilisation" 
-                 className="text-blue-600 hover:underline block break-all">
+              <a 
+                href="https://www.moncompteformation.gouv.fr/espace-public/conditions-generales-dutilisation" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline block break-all"
+              >
                 https://www.moncompteformation.gouv.fr/espace-public/conditions-generales-dutilisation
               </a>
               <p className="text-gray-600">Le Client demeure responsable de la demande de prise en charge auprès de l'organisme financeur.</p>
@@ -298,17 +313,19 @@ export default function CGVShort() {
             </div>
           </AccordionItem>
         </div>
-      </div>
+      </main>
 
       {/* Footer */}
-      <div className="bg-gray-100 border-t border-gray-200 mt-12 py-8 px-4">
+      <footer className="bg-gray-100 border-t border-gray-200 mt-12 py-8 px-4">
         <div className="max-w-4xl mx-auto text-center text-sm text-gray-600">
           <p><strong>Document établi le 19 novembre 2025</strong></p>
           <p className="mt-2">Certification Qualiopi • SIREN 947 951 075 • NDA 11950799295</p>
           <p className="mt-2 italic">Tous droits réservés. Reproduction interdite sans autorisation écrite.</p>
         </div>
-      </div>
-    </section>
-  <Footer />
+      </footer>
+    </div>
+    
+    <Footer />
+    </>
   );
 }
